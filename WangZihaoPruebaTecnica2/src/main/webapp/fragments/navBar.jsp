@@ -15,10 +15,10 @@
         <div id="contentBar">
             <div id="navDirections">
                 <a href="index.jsp">
-                    <button type="button">Home</button>
+                    <button type="button" id="navBarButton">Home</button>
                 </a>
                 <form action="SvTurn" method="get">
-                    <button>See appointments</button>
+                    <button id="navBarButton">See appointments</button>
                 </form>
             </div>
             <div>

@@ -28,3 +28,7 @@ button:hover{
     background-color: white;
     color: black;
 }
+
+#navBarButton{
+    font-size: 20px;
+}

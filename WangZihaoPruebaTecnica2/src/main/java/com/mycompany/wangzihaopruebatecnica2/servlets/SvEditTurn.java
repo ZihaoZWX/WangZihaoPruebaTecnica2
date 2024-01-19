@@ -52,6 +52,8 @@ public class SvEditTurn extends HttpServlet {
         String gmail=request.getParameter("gmail");
         String turnId=request.getParameter("turnId");
         String turnDate=request.getParameter("date");
+        String procedure=request.getParameter("procedure");
+        String province=request.getParameter("province");
         String postCode=request.getParameter("postCode");
         String description=request.getParameter("description");
         String state=request.getParameter("state");
@@ -61,6 +63,8 @@ public class SvEditTurn extends HttpServlet {
         turn.getUsers().setPhoneNumber(phoneNumber);
         turn.getUsers().setGmail(gmail);
         LocalDate date=LocalDate.parse(turnDate);
+        turn.setTurnProcedure(procedure);
+        turn.setProvince(province);
         turn.setTurnDate(date);
         turn.setPostalCode(postCode);
         turn.setDescription(description);

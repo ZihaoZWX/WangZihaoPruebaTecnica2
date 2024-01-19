@@ -26,14 +26,10 @@
     <body>
         <jsp:directive.include file="fragments/navBar.jsp" />
         <div id="container">
-            <form action="SvTurn" method="post">
+            <form action="SvTurn" method="post" id="createForm">
                 <div id="container2">
                     <div id="firstPartForm">
-                        <div>
-                            <label>Date :</label><input type="date" name="date" min="<%=java.time.LocalDate.now()%>" required/>
-                        </div>
-                        <div>
-                            <label>Procedure :</label>
+                            <label>Procedure</label>
                             <select name="procedure" id="procedure">
                                 <%
                                     try {
@@ -56,10 +52,12 @@
                                     }
                                 %>
                             </select>
-                        </div>
                     </div>
                     <div id="secondPartForm">
-                        <div>
+                        <div class="alignCenter">
+                            <label>Date</label><input type="date" name="date" min="<%=java.time.LocalDate.now()%>" required/>
+                        </div>
+                        <div class="alignCenter">
                             <label>Province :</label>
                             <select name="province" id="province" onchange="getProvince()">
                                 <%
@@ -84,7 +82,7 @@
                                 %>
                             </select>
                         </div>
-                        <div>
+                            <div class="alignCenter">
                             <label>Office :</label>
                             <select name="office" id="office">
                                 <%
@@ -109,14 +107,14 @@
                                     }%>
                             </select>
                         </div>
-                        <div>
+                        <div class="alignCenter">
                             <label>Postal Code :</label><input type="text" name="postalCode" maxlength="5" minlength="5" pattern="[0-9]+" required/>
                         </div>
                     </div>
                     <div id="thirdPartForm">
                         <label>Description : </label><textArea name="description" rows="20" cols="100" maxlength="220" required></textarea>
                 </div>
-                <button type="submit">Submit</button>
+                    <button type="submit" id="createTurnSubmit">Submit</button>
                 </div>
             </form>
         </div>

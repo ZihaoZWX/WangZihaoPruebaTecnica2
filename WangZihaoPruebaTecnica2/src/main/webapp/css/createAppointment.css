@@ -4,7 +4,12 @@
 }
 
 #container{
-    margin-top: 10px;
+    height: 100%;
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #container2{
@@ -12,6 +17,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 550px;
+    width: 80%;
+    border: solid black;
 }
 
 textArea{
@@ -20,7 +28,9 @@ textArea{
 
 #firstPartForm{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 80%;
     margin-top: 20px;
 }
@@ -28,7 +38,7 @@ textArea{
 #secondPartForm{
     display: flex;
     justify-content: space-around;
-    width: 80%;
+    width: 60%;
     margin-top: 20px;
 }
 
@@ -40,4 +50,23 @@ textArea{
     width: 80%;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.alignCenter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#createTurnSubmit{
+    height: 50px;
+}
+
+#createForm{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

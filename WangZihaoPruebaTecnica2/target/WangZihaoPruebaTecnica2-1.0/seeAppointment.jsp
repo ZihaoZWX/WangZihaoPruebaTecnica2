@@ -37,56 +37,43 @@
             <div class="tableHeadElement">
                 ID
             </div>
-            <hr>
             <div class="tableHeadElement">
                 Name
             </div>
-            <hr>
             <div class="tableHeadElement">
                 Surname
             </div>
-            <hr>
             <div class="tableHeadElement">
                 Phone number
             </div>
-            <hr>
             <div class="tableHeadElement">
                 Gmail
             </div>
-            <hr>
             <div class="tableHeadElement">
                 Turn ID
             </div>
-            <hr>
             <div class="tableHeadElement">
                 Date
             </div>
-            <hr>
             <div class="tableHeadElement">
                 Procedure
             </div>
-            <hr>
             <div class="tableHeadElement">
                 Province
             </div>
-            <hr>
             <div class="tableHeadElement">
                 Office
             </div>
-            <hr>
             <div class="tableHeadElement">
                 Postal Code
             </div>
-            <hr>
             <div class="tableHeadElement">
                 Description
             </div>
-            <hr>
             <div class="tableHeadElement">
                 State
             </div>
             <div class="space"></div>
-            <hr>
         </div>
         <hr>
         <%
@@ -96,47 +83,80 @@
         <div id="tableBody">
             <div id="tableData">
                 <form action="SvEditTurn" method="post">
-                <div id="tableBodyElements">
-                <label class="tableBodyElement"><%=turn.getUsers().getId()%></label>
-                <hr>
-                <input class="tableBodyElement" value="<%=turn.getUsers().getName()%>" name="name" maxlength="60" pattern="[A-Za-z]+" required/>
-                <hr>
-                <input class="tableBodyElement" value="<%=turn.getUsers().getSurname()%>" name="surname" maxlength="60" pattern="[A-Za-z]+" required/>
-                <hr>
-                <input class="tableBodyElement" value="<%=turn.getUsers().getPhoneNumber()%>" name="phoneNumber" maxlength="9" minlength="9" pattern="[0-9]+" required/>
-                <hr>
-                <input class="tableBodyElement" value="<%=turn.getUsers().getGmail()%>" name="gmail" maxlength="60" required/>
-                <hr>
-                <label class="tableBodyElement"><%=turn.getId()%></label>
-                <hr>
-                <input type="date" class="tableBodyElement" value="<%=turn.getTurnDate()%>" name="date" min="<%=java.time.LocalDate.now()%>" required/>
-                <hr>
-                <label class="tableBodyElement"><%=turn.getTurnProcedure()%></label>
-                <hr>
-                <label class="tableBodyElement"><%=turn.getProvince()%></label>
-                <hr>
-                <label class="tableBodyElement"><%=turn.getOffice()%></label>
-                <hr>
-                <input class="tableBodyElement" value="<%=turn.getPostalCode()%>" name="postCode" maxlength="5" minlength="5" pattern="[0-9]+" required/>
-                <hr>
-                <textarea class="tableBodyElement" name="description" maxlength="220" required><%=turn.getDescription()%></textarea>
-                <hr>
-                <input type="hidden" class="tableBodyElement" value="<%=turn.getId()%>" name="turnId"/>
-                <select class="tableBodyElement" name="state" id="state">
-                    <option value="<%=turn.getTurnState()%>"><%=turn.getTurnState()%></option>
-                    <option value="<%=turn.getTurnState().equals("on hold") ? "already processed" : "on hold"%>"><%=turn.getTurnState().equals("on hold") ? "already processed" : "on hold"%></option>
-                </select>
-                <hr>
-                <div class="centerButton">
-                    <button type="submit" class="button">Edit</button>
-                </div>
-                </div>
+                    <div id="tableBodyElements">
+                        <label class="tableBodyElement"><%=turn.getUsers().getId()%></label>
+                        <input class="tableBodyElement" value="<%=turn.getUsers().getName()%>" name="name" maxlength="60" pattern="[A-Za-z]+" required/>
+                        <input class="tableBodyElement" value="<%=turn.getUsers().getSurname()%>" name="surname" maxlength="60" pattern="[A-Za-z]+" required/>
+                        <input class="tableBodyElement" value="<%=turn.getUsers().getPhoneNumber()%>" name="phoneNumber" maxlength="9" minlength="9" pattern="[0-9]+" required/>
+                        <input class="tableBodyElement" value="<%=turn.getUsers().getGmail()%>" name="gmail" maxlength="60" required/>
+                        <label class="tableBodyElement"><%=turn.getId()%></label>
+                        <input type="date" class="tableBodyElement" value="<%=turn.getTurnDate()%>" name="date" min="<%=java.time.LocalDate.now()%>" required/>
+                        <select name="procedure" id="procedure" class="tableBodyElement">
+                            <%
+                                try {
+                                    ObjectMapper objectManager = new ObjectMapper();
+                                    String filePath = getServletContext().getRealPath("/JSON/Procedures.json");
+                                    JsonNode jsonNode = objectManager.readTree(new File(filePath));
+                                    JsonNode procedures = jsonNode.path("Procedures");
+                                    List<String> proceduresList = new ArrayList<>();
+                                    Iterator<JsonNode> iterator = procedures.elements();
+                                    while (iterator.hasNext()) {
+                                        proceduresList.add(iterator.next().asText());
+                                    }
+                                    proceduresList.removeIf(tempProc -> tempProc.contains(turn.getTurnProcedure()));
+                            %>
+                            <option value="<%=turn.getTurnProcedure()%>"><%=turn.getTurnProcedure()%></option>
+                            <%for (String data : proceduresList) {%>
+                            <option value="<%=data%>"><%=data%></option>
+                            <%
+                                    }
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            %>
+                        </select>
+                        <select name="province" id="province" class="tableBodyElement">
+                            <%
+                                List<String> listProvincias = new ArrayList<>();
+                                try {
+                                    ObjectMapper objectMapper = new ObjectMapper();
+                                    File file = new File(getServletContext().getRealPath("/JSON/Provinces.json"));
+                                    JsonNode jsonNode = objectMapper.readTree(file);
+                                    JsonNode jsonProvinces = jsonNode.path("Spain").path("Provinces");
+                                    Iterator<JsonNode> iterator = jsonProvinces.elements();
+                                    while (iterator.hasNext()) {
+                                        listProvincias.add(iterator.next().asText());
+                                    }
+                                    listProvincias.removeIf(tempProv -> tempProv.contains(turn.getProvince()));
+                            %>
+                            <option value="<%=turn.getProvince()%>"><%=turn.getProvince()%></option>
+                            <%for (String data : listProvincias) {%>
+                            <option value="<%=data%>"><%=data%></option>
+                            <%
+                                    }
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            %>
+                        </select>
+                        <label class="tableBodyElement"><%=turn.getOffice()%></label>
+                        <input class="tableBodyElement" value="<%=turn.getPostalCode()%>" name="postCode" maxlength="5" minlength="5" pattern="[0-9]+" required/>
+                        <textarea class="tableBodyElement" name="description" maxlength="220" required><%=turn.getDescription()%></textarea>
+                        <input type="hidden" class="tableBodyElement" value="<%=turn.getId()%>" name="turnId"/>
+                        <select class="tableBodyElement" name="state" id="state">
+                            <option value="<%=turn.getTurnState()%>"><%=turn.getTurnState()%></option>
+                            <option value="<%=turn.getTurnState().equals("on hold") ? "already processed" : "on hold"%>"><%=turn.getTurnState().equals("on hold") ? "already processed" : "on hold"%></option>
+                        </select>
+                        <div class="centerButton">
+                            <button type="submit" class="button">Edit</button>
+                        </div>
+                    </div>
                 </form>
                 <div id="tableButtons">
-                <form action="SvDeleteTurn" method="post">
+                    <form action="SvDeleteTurn" method="post">
                         <input type="hidden" value="<%=turn.getId()%>" name="turnId"/>
                         <button type="submit" class="button">Delete</button>
-                </form>
+                    </form>
                 </div>
             </div>
             <hr>
