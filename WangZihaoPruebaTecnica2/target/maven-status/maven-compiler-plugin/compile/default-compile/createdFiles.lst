@@ -1,0 +1,17 @@
+com\mycompany\wangzihaopruebatecnica2\logic\Turn.class
+com\mycompany\wangzihaopruebatecnica2\logic\Users.class
+com\mycompany\wangzihaopruebatecnica2\persistence\exceptions\IllegalOrphanException.class
+com\mycompany\wangzihaopruebatecnica2\persistence\TurnJpaController.class
+com\mycompany\wangzihaopruebatecnica2\servlets\SvEditTurn.class
+com\mycompany\wangzihaopruebatecnica2\persistence\exceptions\PreexistingEntityException.class
+com\mycompany\wangzihaopruebatecnica2\servlets\SvDateFilter.class
+com\mycompany\wangzihaopruebatecnica2\servlets\SvTurn.class
+com\mycompany\wangzihaopruebatecnica2\persistence\PersistenceController.class
+com\mycompany\wangzihaopruebatecnica2\persistence\UsersJpaController.class
+com\mycompany\wangzihaopruebatecnica2\servlets\SvDeleteTurn.class
+com\mycompany\wangzihaopruebatecnica2\logic\Controller.class
+com\mycompany\wangzihaopruebatecnica2\logic\Users_.class
+com\mycompany\wangzihaopruebatecnica2\logic\TurnIdGenerator.class
+com\mycompany\wangzihaopruebatecnica2\persistence\exceptions\NonexistentEntityException.class
+com\mycompany\wangzihaopruebatecnica2\logic\Turn_.class
+com\mycompany\wangzihaopruebatecnica2\servlets\SvUser.class

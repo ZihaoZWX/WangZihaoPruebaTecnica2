@@ -1,0 +1,43 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#container{
+    margin-top: 10px;
+}
+
+#container2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+textArea{
+    resize: none;
+}
+
+#firstPartForm{
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin-top: 20px;
+}
+
+#secondPartForm{
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin-top: 20px;
+}
+
+#thirdPartForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

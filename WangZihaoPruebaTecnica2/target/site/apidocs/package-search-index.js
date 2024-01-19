@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.mycompany.wangzihaopruebatecnica2.logic"},{"l":"com.mycompany.wangzihaopruebatecnica2.persistence"},{"l":"com.mycompany.wangzihaopruebatecnica2.persistence.exceptions"},{"l":"com.mycompany.wangzihaopruebatecnica2.servlets"}];updateSearchResults();

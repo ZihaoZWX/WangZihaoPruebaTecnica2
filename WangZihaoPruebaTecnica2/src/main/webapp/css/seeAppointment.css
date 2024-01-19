@@ -1,0 +1,74 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#tableHead{
+    display: flex;
+}
+
+#tableBody{
+    display: flex;
+    flex-direction: column;
+}
+
+#tableData{
+    display: flex;
+    flex-direction: row;
+}
+
+.tableHeadElement{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6.62%;
+}
+
+#tableBodyElements{
+    display: flex;
+}
+
+.tableBodyElement{
+    word-wrap: break-word;
+    width: 6.2%;
+    margin: 5px;
+    resize: none;
+}
+
+#tableButtons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%
+}
+
+.button{
+    height: 30px;
+    width: 55px;
+}
+
+#state{
+    width: 100px;
+}
+
+.centerButton{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.space{
+    width: 21px;
+}
+
+input{
+    height: 30px;
+}
+
+select{
+    height: 30px;
+}
+
+#searchButton{
+    height: 30px;
+}

@@ -1,0 +1,15 @@
+C:\Users\zihao\NetBeansProject\WangZihaoPruebaTecnica2\src\main\java\com\mycompany\wangzihaopruebatecnica2\logic\Users.java
+C:\Users\zihao\NetBeansProject\WangZihaoPruebaTecnica2\src\main\java\com\mycompany\wangzihaopruebatecnica2\servlets\SvEditTurn.java
+C:\Users\zihao\NetBeansProject\WangZihaoPruebaTecnica2\src\main\java\com\mycompany\wangzihaopruebatecnica2\persistence\TurnJpaController.java
+C:\Users\zihao\NetBeansProject\WangZihaoPruebaTecnica2\src\main\java\com\mycompany\wangzihaopruebatecnica2\persistence\exceptions\PreexistingEntityException.java
+C:\Users\zihao\NetBeansProject\WangZihaoPruebaTecnica2\src\main\java\com\mycompany\wangzihaopruebatecnica2\persistence\exceptions\IllegalOrphanException.java
+C:\Users\zihao\NetBeansProject\WangZihaoPruebaTecnica2\src\main\java\com\mycompany\wangzihaopruebatecnica2\persistence\UsersJpaController.java
+C:\Users\zihao\NetBeansProject\WangZihaoPruebaTecnica2\src\main\java\com\mycompany\wangzihaopruebatecnica2\persistence\PersistenceController.java
+C:\Users\zihao\NetBeansProject\WangZihaoPruebaTecnica2\src\main\java\com\mycompany\wangzihaopruebatecnica2\servlets\SvUser.java
+C:\Users\zihao\NetBeansProject\WangZihaoPruebaTecnica2\src\main\java\com\mycompany\wangzihaopruebatecnica2\persistence\exceptions\NonexistentEntityException.java
+C:\Users\zihao\NetBeansProject\WangZihaoPruebaTecnica2\src\main\java\com\mycompany\wangzihaopruebatecnica2\servlets\SvDeleteTurn.java
+C:\Users\zihao\NetBeansProject\WangZihaoPruebaTecnica2\src\main\java\com\mycompany\wangzihaopruebatecnica2\logic\Controller.java
+C:\Users\zihao\NetBeansProject\WangZihaoPruebaTecnica2\src\main\java\com\mycompany\wangzihaopruebatecnica2\logic\Turn.java
+C:\Users\zihao\NetBeansProject\WangZihaoPruebaTecnica2\src\main\java\com\mycompany\wangzihaopruebatecnica2\logic\TurnIdGenerator.java
+C:\Users\zihao\NetBeansProject\WangZihaoPruebaTecnica2\src\main\java\com\mycompany\wangzihaopruebatecnica2\servlets\SvTurn.java
+C:\Users\zihao\NetBeansProject\WangZihaoPruebaTecnica2\src\main\java\com\mycompany\wangzihaopruebatecnica2\servlets\SvDateFilter.java
