@@ -1,5 +1,5 @@
 ### Proyecto realizado por Zihao Wang
-Pagina web que registra usuarios(Si no existe) con sus datos para luego poder Seleccionar un tramite(Relacionado con la gestion del NIE en la peninsula Española) , en que provincia hacerla, y dependiendo de la provincia les aparecera unas officinas u otras(Actualmente son todas Officina1,Officina2 etc, si modifican el JSON pueden asignarles Officinas reales).
+Pagina web que registra usuarios(Si no existe) con sus datos para luego poder Seleccionar un tramite(Relacionado con la gestion del NIE en la peninsula Española) , en que provincia hacerla, y dependiendo de la provincia les aparecera unas officinas u otras(Actualmente son todas Officina1,Officina2 etc, si modifican el JSON pueden asignarles Officinas reales). Es una pagina web inspirada en la pagina web real para la citacción a la hora de realizar tramites.
 ### Requisitos
 1. Tener instalado **JDK 17**(Recomendado) o superior
 2. Tener alguna **IDE** instalada de la **misma version** que el JDK para evitar problemas. Es necesario ya que es un programa que se ejecuta por consola
@@ -21,3 +21,4 @@ Pagina web que registra usuarios(Si no existe) con sus datos para luego poder Se
     * En IntelliJ
         1. Abrir InteliJ y en la parte esquina superior izquierda **File/Open** y localizaremos el proyecto descargado, lo seleccionamos y le damos al boton **OK**
 ### Funcionalidades
+Es una web bastante intuitiva en la cual en la pagina inicial podremos registrar un usuario(Si existe no se crea) con su ID es decir DNI,NIE etc, un nombre y un apellido (sin numeros) y así con todos los campos. Despues de crear se nos llevara a la pagina de creaccion de citas la cual se le asignara al usuario actual. Tendremos una barra de navegacion en la parte superior con la cual podremos volver a la pagina principal o ver otra pagina en la cual podremos ver , gestionar y eliminar las citas.
