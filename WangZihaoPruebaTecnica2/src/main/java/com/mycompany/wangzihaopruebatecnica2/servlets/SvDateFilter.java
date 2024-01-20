@@ -55,7 +55,7 @@ public class SvDateFilter extends HttpServlet {
         
         HttpSession mySession = request.getSession();
         mySession.setAttribute("filterList", secondFilter);
-        response.sendRedirect("appointmentFilter.jsp");
+        response.sendRedirect("seeAppointment.jsp");
         
     }
 

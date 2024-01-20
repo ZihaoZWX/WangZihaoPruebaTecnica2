@@ -4,6 +4,8 @@
     Author     : Zihao Wang
 --%>
 
+<%@page import="java.util.stream.Collectors"%>
+<%@page import="java.time.LocalDate"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.fasterxml.jackson.databind.JsonNode"%>
@@ -22,7 +24,7 @@
     </head>
     <body>
         <jsp:directive.include file="fragments/navBar.jsp" />
-        <br>
+        <br/>
         <form method="get" action="SvDateFilter">
             <input type="date" name="date"/>
             <select name="state">
@@ -78,6 +80,12 @@
         <hr>
         <%
             List<Turn> listTurn = (List) request.getSession().getAttribute("turnList");
+            List<Turn> filterListTurn = (List) request.getSession().getAttribute("filterList");
+            if(filterListTurn==null||filterListTurn.isEmpty()){
+                listTurn=(List) request.getSession().getAttribute("turnList");
+            }else{
+                listTurn=filterListTurn;
+            }
             for (Turn turn : listTurn) {
         %>
         <div id="tableBody">
