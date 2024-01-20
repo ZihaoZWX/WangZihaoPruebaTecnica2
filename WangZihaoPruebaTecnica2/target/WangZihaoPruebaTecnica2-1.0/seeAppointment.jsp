@@ -92,7 +92,7 @@
             <div id="tableData">
                 <form action="SvEditTurn" method="post">
                     <div id="tableBodyElements">
-                        <label class="tableBodyElement"><%=turn.getUsers().getId()%></label>
+                        <input class="tableBodyElement" value="<%=turn.getUsers().getId()%>" name="userId" maxlength="9" minlength="9" required/>
                         <input class="tableBodyElement" value="<%=turn.getUsers().getName()%>" name="name" maxlength="60" pattern="[A-Za-z]+" required/>
                         <input class="tableBodyElement" value="<%=turn.getUsers().getSurname()%>" name="surname" maxlength="60" pattern="[A-Za-z]+" required/>
                         <input class="tableBodyElement" value="<%=turn.getUsers().getPhoneNumber()%>" name="phoneNumber" maxlength="9" minlength="9" pattern="[0-9]+" required/>

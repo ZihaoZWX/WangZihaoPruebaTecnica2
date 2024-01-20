@@ -46,6 +46,7 @@ public class SvEditTurn extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
+        String userId=request.getParameter("userId");
         String name=request.getParameter("name");
         String surname=request.getParameter("surname");
         String phoneNumber=request.getParameter("phoneNumber");
@@ -58,6 +59,7 @@ public class SvEditTurn extends HttpServlet {
         String description=request.getParameter("description");
         String state=request.getParameter("state");
         Turn turn=controller.findTurn(turnId);
+        turn.getUsers().setId(userId);
         turn.getUsers().setName(name);
         turn.getUsers().setSurname(surname);
         turn.getUsers().setPhoneNumber(phoneNumber);
