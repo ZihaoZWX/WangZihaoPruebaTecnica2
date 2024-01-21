@@ -171,6 +171,5 @@
         </div>
         <%}%>
         <jsp:directive.include file="fragments/footer.html" />
-        <script src="${pageContext.request.contextPath}/javascript/enableSelect.js" type="text/javascript"></script>
     </body>
 </html>
