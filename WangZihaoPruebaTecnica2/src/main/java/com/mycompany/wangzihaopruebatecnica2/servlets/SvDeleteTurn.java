@@ -1,12 +1,16 @@
 package com.mycompany.wangzihaopruebatecnica2.servlets;
 
 import com.mycompany.wangzihaopruebatecnica2.logic.Controller;
+import com.mycompany.wangzihaopruebatecnica2.logic.Turn;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -46,6 +50,9 @@ public class SvDeleteTurn extends HttpServlet {
         
         String turnId=request.getParameter("turnId");
         controller.deleteTurn(turnId);
+        List<Turn> turnList=controller.findAllTurns();
+        HttpSession mySession = request.getSession();
+        mySession.setAttribute("turnList", turnList);
         response.sendRedirect("seeAppointment.jsp");
     }
 
